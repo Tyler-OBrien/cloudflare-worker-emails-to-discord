@@ -16,10 +16,9 @@ Then enter your webhook url, fully qualified with https:// and the domain, for e
 
 `https://discord.com/api/webhooks/1062548905558016052/uz0cLqaJYtcFp78I5WYsBcc1MOQ4AAX1xMDafVAiuJRqp7sQdWhR1dXkvKx0oADFakSA`
 
-then deploy, i.e wrangler publish. Create the email routes to the worker within the dashboard as you like.
+then deploy, i.e wrangler publish. Create the email routes to the worker within the dashboard as you like. Note that a worker running will override any normal forwarding you have on the domain, so you have to use the option below if you want that.
 
 You can also forward to an address if you want, just set the FORWARD_TO_ADDRESS secret the same way to a verified destination address you have. If you want to send to more then one, you can just modify the script.
-Note: If you try to forwarded to an address you don't have/unverified, it will just silently fail.
 
 # Warning:
 
