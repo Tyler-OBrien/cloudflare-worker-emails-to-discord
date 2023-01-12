@@ -1,0 +1,7 @@
+name = "discordhook"
+main = "index.js"
+compatibility_date = "2022-01-11"
+
+[vars]
+# The necessary secrets are:
+# - DISCORD_WEBHOOK_URL
