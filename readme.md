@@ -8,11 +8,13 @@ Note this uses the postal-mime library which is AGPL. It's the only decent brows
 Create a webhook to the channel you want your emails in:
 https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 
-wrangler secret put DISCORD_WEBHOOK_URL
+Add it as a secret:
 
-Your Webhook url, something like
+i.e from CLI, you can do: `wrangler secret put DISCORD_WEBHOOK_URL`
 
-https://discord.com/api/webhooks/1062548905558016052/uz0cLqaJYtcFp78I5WYsBcc1MOQ4AAX1xMDafVAiuJRqp7sQdWhR1dXkvKx0oADFakSA
+Then enter your webhook url, fully qualified with https:// and the domain, for example:
+
+`https://discord.com/api/webhooks/1062548905558016052/uz0cLqaJYtcFp78I5WYsBcc1MOQ4AAX1xMDafVAiuJRqp7sQdWhR1dXkvKx0oADFakSA`
 
 then deploy, i.e wrangler publish. Create the email routes to the worker within the dashboard as you like.
 
