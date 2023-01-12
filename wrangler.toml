@@ -5,3 +5,5 @@ compatibility_date = "2022-01-11"
 [vars]
 # The necessary secrets are:
 # - DISCORD_WEBHOOK_URL
+# You can set this to forward to an address as well
+# - FORWARD_TO_ADDRESS

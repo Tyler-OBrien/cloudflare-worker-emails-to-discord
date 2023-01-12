@@ -18,6 +18,9 @@ Then enter your webhook url, fully qualified with https:// and the domain, for e
 
 then deploy, i.e wrangler publish. Create the email routes to the worker within the dashboard as you like.
 
+You can also forward to an address if you want, just set the FORWARD_TO_ADDRESS secret the same way to a verified destination address you have. If you want to send to more then one, you can just modify the script.
+Note: If you try to forwarded to an address you don't have/unverified, it will just silently fail.
+
 # Warning:
 
 There is currently no sanity checks with this. If the email parsing goes above the worker's max memory limits of 128MB or takes too much CPU time to parse, it will just fail and throw an error, which Cloudflare currently handles by rejecting the message entirely, i.e  521 5.3.0 Upstream error, please check
