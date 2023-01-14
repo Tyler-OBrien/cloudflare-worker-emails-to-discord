@@ -20,6 +20,16 @@ then deploy, i.e wrangler publish. Create the email routes to the worker within 
 
 You can also forward to an address if you want, just set the FORWARD_TO_ADDRESS secret the same way to a verified destination address you have. If you want to send to more then one, you can just modify the script.
 
+# Limit
+
+Any emails over the discord embed description size limit will be uploaded as files.
+
+The file will be trimmed (and the name will reflect that, email-trimmed.txt), if it is over 8MB, the default upload limit. 
+
+If you have a boosted server, Level 2 (50MB) or Level 3 (100MB), you can change that constant to allow larger email bodies. 
+
+Note that the current limit of Cloudflare's Postmaster (inbound email service) is 25MB.
+
 # Warning:
 
 There is currently no sanity checks with this. If the email parsing goes above the worker's max memory limits of 128MB or takes too much CPU time to parse, it will just fail and throw an error, which Cloudflare currently handles by rejecting the message entirely, i.e  521 5.3.0 Upstream error, please check
