@@ -22,11 +22,11 @@ You can also forward to an address if you want, just set the FORWARD_TO_ADDRESS 
 
 # Limit
 
-Any emails over the discord embed description size limit will be uploaded as files.
+Any emails over the discord embed description size limit will be trimmed, and the full contents uploaded as files.
 
-The file will be trimmed (and the name will reflect that, email-trimmed.txt), if it is over 8MB, the default upload limit. 
+The file will still be trimmed (and the name will reflect that, email-trimmed.txt), if it is over 8MB, the default upload limit. 
 
-If you have a boosted server, Level 2 (50MB) or Level 3 (100MB), you can change that constant to allow larger email bodies. 
+If you have a boosted server, Level 2 (50MB) or Level 3 (100MB), you can change that constant in the code to not unnecessarily trim files until they hit your limit. 
 
 Note that the current limit of Cloudflare's Postmaster (inbound email service) is 25MB.
 
