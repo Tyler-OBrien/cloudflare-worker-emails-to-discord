@@ -33,7 +33,7 @@ export default {
                 )}...(TRIMMED)`
               : emailText,
           author: {
-            name: `${(this.trimToLimit(email.from.name, 100))} <${this.trimToLimit(email.from.address, 100)}>`, // Limit of 256 characters, but we will be a bit careful
+            name: `${(this.trimToLimit(email.from.name, 100))}${email.from.name.length > 64 ? "\n" : " "}<${this.trimToLimit(email.from.address, 100)}>`, // Limit of 256 characters, but we will be a bit careful
           },
           footer: {
             text: `This email was sent to ${this.trimToLimit(message.to, 100)}\nEnvelope From: ${this.trimToLimit(message.from, 100)}`, // Limit of 2048 characters, but we will be careful
