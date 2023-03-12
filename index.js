@@ -14,7 +14,8 @@ export default {
     let arrayBuffer = await rawEmail.arrayBuffer();
     const parser = new PostalMime.default();
     const email = await parser.parse(arrayBuffer);
-    var embedBody = JSON.stringify({
+    
+    let embedBody = JSON.stringify({
       embeds: [
         {
           title: `${message.headers.get("subject")}`,
@@ -37,7 +38,7 @@ export default {
     let formData = new FormData();
     formData.append("payload_json", embedBody);
     if (email.text.length > DISCORD_EMBED_LIMIT) {
-      var newTextBlob = new Blob([email.text], {
+      let newTextBlob = new Blob([email.text], {
         type: "text/plain",
       });
       // If the text is too big, we need truncate the blob.
@@ -51,7 +52,7 @@ export default {
         );
       }
     }
-    var discordResponse = await fetch(env.DISCORD_WEBHOOK_URL, {
+    let discordResponse = await fetch(env.DISCORD_WEBHOOK_URL, {
       method: "POST",
       body: formData,
     });
