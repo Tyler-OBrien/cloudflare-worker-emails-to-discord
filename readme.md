@@ -1,6 +1,5 @@
 # Cloudflare Worker Emails to Discord
-Forward emails you receive to Discord
-
+Use Email Workers to forward the emails you receive to a discord webhook! This handles respecting Discord's various embed limits, trimming if necessary, and attaching email as an attachment.
 # AGPL
 Note this uses the postal-mime library which is AGPL. It's the only decent browser/working in Cloudflare Workers (not dependent on Node) email parsing library that I could find. If you find another one with less restrictive licensing, please let me know!
 
@@ -32,7 +31,7 @@ Note that the current limit of Cloudflare's Postmaster (inbound email service) i
 
 # Warning:
 
-There is currently no sanity checks with this. If the email parsing goes above the worker's max memory limits of 128MB or takes too much CPU time to parse, it will just fail and throw an error, which Cloudflare currently handles by rejecting the message entirely, i.e  521 5.3.0 Upstream error, please check
+There is currently no sanity checks/retries with this. If your message fails to send to your discord webhook, or the worker fails to parse the email in time, the email will just be rejected (521 5.3.0 Upstream error). You can set up forwarding to an address, which will occur before any parsing/discordhook sending.
 
 It will still forward your email without issue if you have that enabled, as it tries that first.
 
