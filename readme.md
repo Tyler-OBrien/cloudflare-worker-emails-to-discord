@@ -1,7 +1,5 @@
 # Cloudflare Worker Emails to Discord
 Use Email Workers to forward the emails you receive to a discord webhook! This handles respecting Discord's various embed limits, trimming if necessary, and attaching email as an attachment.
-# AGPL
-Note this uses the postal-mime library which is AGPL. It's the only decent browser/working in Cloudflare Workers (not dependent on Node) email parsing library that I could find. If you find another one with less restrictive licensing, please let me know!
 
 # How to setup:
 Create a webhook to the channel you want your emails in:
