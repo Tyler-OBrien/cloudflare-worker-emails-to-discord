@@ -1,6 +1,6 @@
 {
   "name": "cloudflare-worker-emails-to-discord",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "html-to-text": "^9.0.4",
-    "postal-mime": "^1.0.13",
-    "wrangler": "^2.7.1"
+    "html-to-text": "^9.0.5",
+    "postal-mime": "^2.4.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.24.3"
   }
 }

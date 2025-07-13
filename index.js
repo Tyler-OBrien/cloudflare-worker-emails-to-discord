@@ -63,11 +63,7 @@ export default {
       body: formData,
     });
     if (discordResponse.ok == false) {
-      console.log("Discord Webhook Failed");
-      console.log(
-        `Discord Response: ${discordResponse.status} ${discordResponse.statusText}`
-      );
-      console.log(await discordResponse.json());
+      console.log(`Discord Webhook Failed: Discord Response: ${discordResponse.status} ${discordResponse.statusText} -> ${await discordResponse.json()} `);
     }
     // You probably will want to forward the mail anyway to an address, in case discord is down,
     // Or you could make it fail if the webhook fails, causing the sending mail server to error out.
